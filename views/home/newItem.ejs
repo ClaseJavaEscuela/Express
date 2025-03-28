@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nuevo Ítem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .create-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .create-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .create-container input[type="text"],
+        .create-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .create-container textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .create-button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .create-button:hover {
+            background-color: #45a049;
+        }
+
+        .cancel-button {
+            background-color: #ccc;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .cancel-button:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="create-container">
+        <h2>Crear Nuevo Ítem</h2>
+        <form id="create-item-form">
+            <input type="text" id="item-name" placeholder="Nombre del ítem" required>
+            <textarea id="item-description" placeholder="Descripción del ítem"></textarea>
+            <button type="submit" class="create-button">Crear Ítem</button>
+            <button type="button" class="cancel-button" onclick="cancelCreate()">Cancelar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('create-item-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe
+
+            const itemName = document.getElementById('item-name').value;
+            const itemDescription = document.getElementById('item-description').value;
+
+            if (itemName && itemDescription) {
+                alert(`Ítem creado:\nNombre: ${itemName}\nDescripción: ${itemDescription}`);
+                // Aquí puedes agregar la lógica para guardar el ítem (por ejemplo, enviar datos a un servidor)
+            } else {
+                alert("Por favor, completa todos los campos.");
+            }
+        });
+
+        function cancelCreate() {
+            alert("Creación cancelada.");
+            // Aquí puedes redirigir al usuario a otra página o cerrar la pestaña de creación
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pestaña de Eliminación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .delete-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .delete-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .delete-container p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .delete-button {
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .delete-button:hover {
+            background-color: #ff1a1a;
+        }
+
+        .cancel-button {
+            background-color: #ccc;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .cancel-button:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="delete-container">
+        <h2>Eliminar Cuenta</h2>
+        <p>¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer.</p>
+        <button class="delete-button" onclick="confirmDelete()">Eliminar</button>
+        <button class="cancel-button" onclick="cancelDelete()">Cancelar</button>
+    </div>
+
+    <script>
+        function confirmDelete() {
+            if (confirm("¿Estás seguro de que deseas eliminar tu cuenta?")) {
+                alert("Cuenta eliminada.");
+                // Aquí puedes agregar la lógica para eliminar la cuenta
+            } else {
+                alert("Eliminación cancelada.");
+            }
+        }
+
+        function cancelDelete() {
+            alert("Eliminación cancelada.");
+            // Aquí puedes redirigir al usuario a otra página o cerrar la pestaña de eliminación
+        }
+    </script>
+
+</body>
+</html>

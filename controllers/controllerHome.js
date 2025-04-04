@@ -7,7 +7,9 @@ export class controllerHome {
       if( listaDeProductos.message){
         throw new Error("Error el obtener lo usuarios");
       }
-      //recibe dos paramentos 1._ vista 2._ objeto donde estan los valores a mostrar
+      //recibe dos paramentos 
+      // 1._ vista 
+      // 2._ objeto donde estan los valores a mostrar
       res.render("home/index", {
         encabezado: "Bienvenido a esta pagina",
         productos: listaDeProductos.data,

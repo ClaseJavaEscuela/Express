@@ -28,6 +28,6 @@ User.init({
 		type:DataTypes.INTEGER,
 	},
 }, 
-{ sequelize, modelName: "User", tableName: "usuarios", timestamps:false});
+{ sequelize, modelName: "User", tableName: "user", timestamps:false});
 
 export default User;

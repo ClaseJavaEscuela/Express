@@ -5,13 +5,13 @@ import js from "express-ejs-layouts";
 import { routerHome } from "./Router/home.js";
 import appUser from "./Router/user.js";
 import sequelize from "./Data/db.js";
+import bookRouer from "./Router/book.js";
 
 const PORT = 4040;
 
 const app = express();
 
 sequelize.sync().then(()=>console.log("conectado")).catch(console.log)
-
 
 app.set("view engine", "ejs");
 app.set("views", path.join(import.meta.dirname, "/views"));
@@ -23,6 +23,7 @@ app.use(morgan("dev"));
 app.use(json());
 
 app.use("/", routerHome);
+app.use("/book",bookRouer);
 app.use("/users", appUser);
 
 app.listen(PORT, () => {
